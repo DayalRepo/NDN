@@ -1,0 +1,9 @@
+{
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.headerTemplate": "",
+    "markdown-pdf.footerTemplate": "",
+    "markdown-pdf.margin.top": "15mm",
+    "markdown-pdf.margin.bottom": "15mm",
+    "markdown-pdf.margin.left": "15mm",
+    "markdown-pdf.margin.right": "15mm"
+}
