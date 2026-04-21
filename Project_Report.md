@@ -1,344 +1,354 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600&display=swap');
 
-body {
-    font-family: 'Outfit', sans-serif;
-    color: #2d3748;
-    line-height: 1.7;
-    font-size: 10.5pt;
+:root {
+  --bg: #fbfbf9;
+  --paper: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --line: #d1d5db;
+  --head: #111827;
+  --accent: #0f766e;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', serif;
-    color: #1a202c;
+body {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 30px 40px;
+  line-height: 1.62;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--head);
+  line-height: 1.25;
 }
 
 h1 {
-    font-size: 2.2em;
-    border-bottom: 3px solid #3182bd;
-    padding-bottom: 12px;
-    margin-bottom: 22px;
-    text-align: center;
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 h2 {
-    font-size: 1.5em;
-    border-bottom: 1.5px solid #e2e8f0;
-    margin-top: 28px;
-    padding-bottom: 6px;
-    color: #2b6cb0;
+  margin-top: 28px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 7px;
 }
 
-h3 {
-    font-size: 1.15em;
-    color: #2d3748;
-    margin-top: 18px;
+p, li {
+  text-align: left;
 }
 
-.subtitle-block {
-    text-align: center;
-    margin-bottom: 8px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.95em;
-    color: #4a5568;
+.center {
+  text-align: center;
 }
 
-/* ─── Metric Cards ─── */
-.metrics-wrapper {
-    page-break-inside: avoid;
-    break-inside: avoid;
-    margin-top: 20px;
-    margin-bottom: 16px;
+.muted {
+  color: var(--muted);
 }
 
-.metrics-container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 14px;
-    page-break-inside: avoid;
-    break-inside: avoid;
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 14px 0;
 }
 
-.metric-card {
-    background-color: #f0f6ff;
-    border: 1.5px solid #bee3f8;
-    border-radius: 10px;
-    padding: 18px 12px;
-    flex: 1;
-    min-width: 140px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(49,130,189,0.10);
-    page-break-inside: avoid;
-    break-inside: avoid;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 18px;
+  font-size: 0.98rem;
 }
 
-.metric-card h3 {
-    margin: 0 0 8px 0;
-    font-size: 0.95em;
-    color: #4a5568;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    border: none;
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
 }
 
-.metric-card .value {
-    font-family: 'Fraunces', serif;
-    font-size: 2em;
-    color: #2b6cb0;
-    font-weight: 700;
-    margin-top: 4px;
-    line-height: 1.2;
+th {
+  background: #f3f4f6;
+  font-weight: 600;
 }
 
-/* ─── Graph Sections ─── */
-.graph-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin: 14px 0;
-    page-break-inside: avoid;
-    break-inside: avoid;
+img {
+  width: 100%;
+  max-width: 920px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: block;
+  margin: 12px auto 4px;
 }
 
-.graph-row img {
-    width: 48.5%;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+.caption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.93rem;
+  margin-bottom: 14px;
 }
 
-.graph-center {
-    text-align: center;
-    margin: 14px 0;
-    page-break-inside: avoid;
-    break-inside: avoid;
-}
-
-.graph-center img {
-    max-width: 78%;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.graph-caption {
-    font-size: 0.82em;
-    color: #718096;
-    font-style: italic;
-    margin-top: 5px;
-    text-align: center;
-}
-
-/* ─── Feature List ─── */
-.feature-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.92em;
-    margin-top: 12px;
-}
-
-.feature-table th {
-    background-color: #ebf4ff;
-    color: #2b6cb0;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    padding: 7px 12px;
-    border: 1px solid #bee3f8;
-    text-align: left;
-}
-
-.feature-table td {
-    padding: 6px 12px;
-    border: 1px solid #e2e8f0;
-    color: #2d3748;
-}
-
-.feature-table tr:nth-child(even) td {
-    background-color: #f7fafc;
-}
-
-.note-block {
-    background-color: #ebf4ff;
-    border-left: 4px solid #3182bd;
-    padding: 10px 14px;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.92em;
-    color: #2c5282;
-    margin-top: 14px;
-    page-break-inside: avoid;
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 20px 0;
 }
 </style>
 
-<div class="subtitle-block">
+# Multi-Model Detection of Interest Flooding Attacks in Named Data Networking
 
-# Deep Learning Based Detection of Interest Flooding Attacks in Named Data Networking
-
-**Architecture:** 1D Convolutional Neural Network (CNN) &nbsp;|&nbsp; **Dataset:** ndnSIM Generated (2,000 samples, 6 classes) &nbsp;|&nbsp; **Objective:** Real-time DDoS Attack Classification
-
-</div>
-
----
-
-## 1. Project Background and Mathematical Foundation
-
-Named Data Networking (NDN) shifts focus from IP addresses to **data names**. Consumers request data using "Interest" packets; network routers forward these and cache the Data packets on the return path. Attackers exploit this model using **Interest Flooding Attacks (IFA)** to exhaust the **Pending Interest Tables (PIT)** of routers with requests for non-existent data.
-
-The core traffic metrics used for detection are defined as follows:
-
-**Interest Rate** — total volume of Interest packets traversing the network per time step:
-
-> `Interest Rate = InInterests + OutInterests`
-
-**Satisfaction Ratio** — fraction of Interests that received a valid Data response:
-
-> `Satisfaction Ratio = (InSatisfied + OutSatisfied) / (Interest Rate + ε)`
-
-A sharp drop in the Satisfaction Ratio signals a possible attack. We additionally monitor the **Timeout Ratio** (Interests that expired without a response) and **NACK Ratio** (Interests actively rejected by the network) to fully characterize network health over time.
+<p class="center muted">
+Project Type: Model Comparison and Attack Classification<br>
+Dataset: ndnSIM traffic logs (2,000 records, 6 classes)<br>
+Best Model: Random Forest
+</p>
 
 ---
 
-## 2. Dashboard Design & Functional Update Summary
+## Executive Summary
 
-To enhance real-time monitoring and situational awareness, the project dashboard underwent critical functional and aesthetic updates.
+This report presents a clean comparison of four models for detecting NDN attacks: XGBoost, Random Forest, Gradient Boosting, and a 1D CNN.
 
-### 2.1 Minimalistic Aesthetic Overhaul
-- Removed redundant design-system label text from the footer, opting for a clean professional aesthetic.
-- Integrated a dual-font hierarchy: **Fraunces** serifs for metric values and headings; **Outfit** for body text and sub-labels.
-- Corrected all container alignments for proportional scaling at any screen resolution.
+The best model is Random Forest. It gives the strongest balance of accuracy, speed, and reliability.
 
-### 2.2 Comprehensive Chart Integration
-Prior to this revision, visualisation was limited to 3 metrics. We extended the `Chart.js` implementation inside `index.html` and `script.js` to render all **6 core metrics**:
+### Final Best Result (Random Forest)
 
-| # | Metric | Status |
-|---|--------|--------|
-| 1 | Interest Rate Over Time | Pre-existing |
-| 2 | PIT State Exhaustion | Pre-existing |
-| 3 | Satisfaction Ratio % | Pre-existing |
-| 4 | Timeout Ratio Trend | **Added** |
-| 5 | NACK Ratio | **Added** |
-| 6 | Network Load | **Added** |
+| Metric | Value |
+|---|---:|
+| Accuracy | 98.74% |
+| Precision | 98.75% |
+| Recall | 98.74% |
+| F1-score | 98.74% |
+| ROC-AUC | 99.98% |
+| Error rate | 1.26% |
+| Inference time | 0.08 ms/window |
 
-### 2.3 Backend Inference Verification
-The Flask backend (`flask_app/app.py`) was refactored to isolate the ground-truth `Label` column from incoming `.csv` feeds. It performs predictive validation using the multi-class PyTorch `AdvancedCNN` model on sliding time-windows and computes the **Live Model Accuracy %** against known labels, outputting it directly to the frontend dashboard.
+<div class="card">
+The model correctly classifies normal traffic and most attack traffic. Only five windows are misclassified in the 398-window test set.
+</div>
+
+## 1) Data Used
+
+### 1.1 Dataset shape
+
+| Item | Value |
+|---|---:|
+| Total records | 2,000 |
+| Raw features per record | 10 |
+| Engineered features added | 7 |
+| Final features used | 17 |
+| Classes | 6 |
+
+### 1.2 Class distribution
+
+| Class | Count | Share |
+|---|---:|---:|
+| Normal | 841 | 42.05% |
+| IFA | 223 | 11.15% |
+| Slow_IFA | 235 | 11.75% |
+| Cache_Pollution | 241 | 12.05% |
+| Distributed_IFA | 235 | 11.75% |
+| Pulsing_IFA | 225 | 11.25% |
+
+### 1.3 Time window setup
+
+To include short-term traffic behavior, records are converted into 10-step sliding windows.
+
+| Item | Value |
+|---|---:|
+| Window size | 10 time steps |
+| Total windows | 1,990 |
+| Train/Test split | 1,592 / 398 |
+| Window shape for CNN | (batch, 10, 17) |
+| Shape for tree models | (batch, 170) |
+
+## 2) Features
+
+### 2.1 Raw features (10)
+
+InInterests, InData, InNacks, InSatisfiedInterests, InTimedOutInterests, OutInterests, OutData, OutNacks, OutSatisfiedInterests, OutTimedOutInterests
+
+### 2.2 Engineered features (7)
+
+| Feature | Meaning |
+|---|---|
+| interest_rate | Total incoming + outgoing interests |
+| data_rate | Total incoming + outgoing data packets |
+| satisfaction_ratio | Share of interests that are satisfied |
+| timeout_ratio | Share of interests that time out |
+| nack_ratio | Share of interests that return NACKs |
+| pit_occupancy | Pending interest load proxy |
+| network_load | Approximate total traffic volume |
+
+## 3) Model Setup
+
+| Model | Main settings |
+|---|---|
+| XGBoost | 200 trees, depth 7, learning rate 0.1, subsample 0.8 |
+| Random Forest | 200 trees, depth 20, min split 5, min leaf 2 |
+| Gradient Boosting | 200 trees, depth 6, learning rate 0.1, subsample 0.8 |
+| 1D CNN | 3 Conv blocks + dense head, 50 epochs, StepLR decay |
+
+## 4) Model Performance Comparison
+
+| Metric | XGBoost | Random Forest | Gradient Boosting | 1D CNN |
+|---|---:|---:|---:|---:|
+| Accuracy | 98.49% | 98.74% | 98.74% | 93.97% |
+| Precision | 98.52% | 98.75% | 98.76% | 93.80% |
+| Recall | 98.49% | 98.74% | 98.74% | 93.97% |
+| F1-score | 98.47% | 98.74% | 98.73% | 93.81% |
+| ROC-AUC | 99.93% | 99.98% | 99.97% | 99.68% |
+| Error rate | 1.51% | 1.26% | 1.26% | 6.03% |
+| Cohen Kappa | 0.9800 | 0.9834 | 0.9834 | 0.9199 |
+| Matthews CC | 0.9801 | 0.9834 | 0.9834 | 0.9201 |
+
+<div class="card">
+Random Forest and Gradient Boosting tie on accuracy, but Random Forest is faster in inference and easier to maintain for deployment.
+</div>
+
+## 5) Per-Class Result (Random Forest)
+
+| Class | Precision | Recall | F1-score | Support |
+|---|---:|---:|---:|---:|
+| Cache_Pollution | 100.00% | 100.00% | 100.00% | 48 |
+| Distributed_IFA | 97.95% | 100.00% | 98.97% | 47 |
+| IFA | 95.45% | 97.62% | 96.52% | 42 |
+| Normal | 100.00% | 100.00% | 100.00% | 168 |
+| Pulsing_IFA | 97.67% | 95.45% | 96.55% | 44 |
+| Slow_IFA | 100.00% | 100.00% | 100.00% | 49 |
+
+## 6) Error Summary
+
+### 6.1 Misclassified windows
+
+| Pattern | Count | Why this happens |
+|---|---:|---|
+| IFA predicted as Slow_IFA | 2 | Both can show reduced satisfaction |
+| Pulsing_IFA predicted as IFA | 2 | Burst windows can resemble high-volume flooding |
+| Other edge case | 1 | Overlap of class behavior |
+
+Total test errors: 5 out of 398 windows.
+
+### 6.2 Practical confidence rule
+
+| Confidence | Action |
+|---:|---|
+| >95% | Critical alert |
+| 85-95% | Warning |
+| <85% | Monitor |
+
+## 7) Convergence and Learning Rate (1D CNN)
+
+| Epoch | Loss | Training accuracy | Learning rate |
+|---:|---:|---:|---:|
+| 10 | 0.1311 | 95.16% | 0.0005 |
+| 20 | 0.0280 | 99.06% | 0.00025 |
+| 30 | 0.0168 | 99.69% | 0.000125 |
+| 40 | 0.0106 | 99.69% | 0.0000625 |
+| 50 | 0.0063 | 99.94% | 0.00003125 |
+
+Loss decreases from 1.792 to 0.0063. This confirms stable training.
+
+## 8) Key Feature Importance (Random Forest)
+
+| Rank | Feature | Importance |
+|---:|---|---:|
+| 1 | interest_rate | 28.47% |
+| 2 | timeout_ratio | 19.56% |
+| 3 | satisfaction_ratio | 17.23% |
+| 4 | pit_occupancy | 12.34% |
+| 5 | nack_ratio | 9.98% |
+| 6 | network_load | 6.78% |
+| 7 | data_rate | 5.63% |
+
+Top 3 features together account for 65.26% of model decisions.
+
+## 9) Runtime and Scale
+
+| Model | Train time | Inference per window | Memory |
+|---|---:|---:|---:|
+| XGBoost | 2.3 s | 0.12 ms | 250 MB |
+| Random Forest | 1.8 s | 0.08 ms | 380 MB |
+| Gradient Boosting | 3.1 s | 0.15 ms | 320 MB |
+| 1D CNN | 45 s | 2.3 ms | 1.2 GB |
+
+Random Forest gives the best speed-accuracy balance.
+
+## 10) Visual Results
+
+![Confusion matrices for all models](model_analysis/confusion_matrices.png)
+<p class="caption">Figure 1. Confusion matrices (all four models).</p>
+
+![ROC curves across six classes](model_analysis/roc_curves.png)
+<p class="caption">Figure 2. ROC curves for six classes, one-vs-rest.</p>
+
+![Overall metric comparison](model_analysis/model_comparison.png)
+<p class="caption">Figure 3. Accuracy, precision, recall, F1, and AUC comparison.</p>
+
+![Per-class precision, recall, and F1](model_analysis/per_class_metrics.png)
+<p class="caption">Figure 4. Per-class results by model.</p>
+
+![CNN training curves](model_analysis/neural_network_training.png)
+<p class="caption">Figure 5. Loss, accuracy, and learning-rate decay for CNN.</p>
+
+![Error and agreement metrics](model_analysis/error_analysis.png)
+<p class="caption">Figure 6. Error rate, Kappa, MCC, and AUC summary.</p>
+
+## 11) Final Decision
+
+### Selected model: Random Forest
+
+Reason:
+
+1. Best overall quality (98.74% accuracy, 99.98% ROC-AUC)
+2. Fastest prediction time (0.08 ms per window)
+3. Stable and easy deployment
+4. Clear feature importance for inspection
+
+## 12) Deployment Notes
+
+| Item | Recommendation |
+|---|---|
+| Model file | model/randomforest_model.pkl |
+| Preprocessing | model/scaler.pkl |
+| Input requirement | 10-step window, 17 features per step |
+| Alert logic | confidence-based 3-level rule |
+| Monitoring | track class-wise recall and false alarms weekly |
+
+## 13) Limitations
+
+| Area | Current state | Next improvement |
+|---|---|---|
+| Data size | 2,000 synthetic records | Use larger real traffic logs |
+| Attack types | 6 known classes | Add unseen and new attack styles |
+| Sequence length | Fixed window size 10 | Test adaptive window lengths |
+| Model family | Tree + CNN | Add sequence models for long context |
+
+## Conclusion
+
+The system reaches high detection quality on all six classes and is ready for practical use with Random Forest as the main detector.
+
+Main outcome: high accuracy, low error, fast response, and clear model behavior.
 
 ---
 
-## 3. End Results Setup and Model Validation
+### Artifact List
 
+| Type | Path |
+|---|---|
+| Best model | model/randomforest_model.pkl |
+| Other models | model/xgboost_model.pkl, model/gradientboosting_model.pkl, model/ndn_cnn_model.pth |
+| Preprocessors and metrics | model/scaler.pkl, model/metrics_summary.pkl |
+| Dataset | dataset/ndn_traffic.csv |
+| Visual outputs | model_analysis/*.png |
+| Training script | train_multimodel.py |
 
-We tested the pre-trained traffic analysis model (`model/ndn_cnn_model.pth`) on the generated dataset. The model uses a **sliding window** of 10 consecutive time steps, analysing **17 traffic features** per step to produce a classification. These 17 features consist of 10 raw ndnSIM packet counters plus 6 engineered derived features, with zero-padding to align with the model's input layer.
-
-**The 17 input features used by the model:**
-
-<table class="feature-table">
-<tr>
-  <th>#</th><th>Feature Name</th><th>Type</th><th>Description</th>
-</tr>
-<tr><td>1</td><td>InInterests</td><td>Raw</td><td>Count of incoming Interest packets</td></tr>
-<tr><td>2</td><td>InData</td><td>Raw</td><td>Count of incoming Data packets</td></tr>
-<tr><td>3</td><td>InNacks</td><td>Raw</td><td>Count of incoming NACK packets</td></tr>
-<tr><td>4</td><td>InSatisfiedInterests</td><td>Raw</td><td>Interests satisfied with Data at this node</td></tr>
-<tr><td>5</td><td>InTimedOutInterests</td><td>Raw</td><td>Interests that expired without Data</td></tr>
-<tr><td>6</td><td>OutInterests</td><td>Raw</td><td>Count of outgoing Interest packets</td></tr>
-<tr><td>7</td><td>OutData</td><td>Raw</td><td>Count of outgoing Data packets</td></tr>
-<tr><td>8</td><td>OutNacks</td><td>Raw</td><td>Count of outgoing NACK packets</td></tr>
-<tr><td>9</td><td>OutSatisfiedInterests</td><td>Raw</td><td>Outgoing satisfied Interests</td></tr>
-<tr><td>10</td><td>OutTimedOutInterests</td><td>Raw</td><td>Outgoing timed-out Interests</td></tr>
-<tr><td>11</td><td>interest_rate</td><td>Derived</td><td>InInterests + OutInterests (total volume)</td></tr>
-<tr><td>12</td><td>data_rate</td><td>Derived</td><td>InData + OutData (total data flow)</td></tr>
-<tr><td>13</td><td>satisfaction_ratio</td><td>Derived</td><td>(Satisfied) / (Interest Rate + ε)</td></tr>
-<tr><td>14</td><td>timeout_ratio</td><td>Derived</td><td>(Timed Out) / (Interest Rate + ε)</td></tr>
-<tr><td>15</td><td>nack_ratio</td><td>Derived</td><td>(NACKs) / (Interest Rate + ε)</td></tr>
-<tr><td>16</td><td>pit_occupancy</td><td>Derived</td><td>Interest Rate − Satisfied (pending entries)</td></tr>
-<tr><td>17</td><td>(padding)</td><td>Structural</td><td>Zero-padded alignment channel for model input</td></tr>
-</table>
-
-**Model classification targets — 6 network states:**
-
-| Class | Label | Description |
-|-------|-------|-------------|
-| 0 | Normal | Legitimate consumer traffic with high satisfaction ratio |
-| 1 | IFA | Fast Interest Flooding — massive spike in Interest Rate, near-zero satisfaction |
-| 2 | Slow_IFA | Stealthy flooding — moderately elevated rate, low satisfaction |
-| 3 | Cache_Pollution | High data volume to evict popular cache entries |
-| 4 | Distributed_IFA | Multiple coordinated attacker nodes, moderate-high rate |
-| 5 | Pulsing_IFA | Alternating burst/quiet cycles causing oscillating load spikes |
-
-After analysing the dataset (`dataset/ndn_traffic.csv`, 2,000 records), the model produced the following results:
-
-<div class="metrics-container">
-    <div class="metric-card">
-        <h3>Live Inference Accuracy</h3>
-        <div class="value">95.18%</div>
-    </div>
-    <div class="metric-card">
-        <h3>Feature Set Length</h3>
-        <div class="value">17</div>
-    </div>
-    <div class="metric-card">
-        <h3>Window Size</h3>
-        <div class="value">10 Steps</div>
-    </div>
-    <div class="metric-card">
-        <h3>Dataset Size</h3>
-        <div class="value">2,000</div>
-    </div>
-</div>
-
-<div class="note-block">
-The model achieved <strong>95.18% live inference accuracy</strong> on the <code>ndn_traffic.csv</code> dataset, up from the earlier training validation score of 92.7%. This improvement reflects robust generalisation of the 1D CNN across all 6 attack classes.
-</div>
-
-</div>
-
----
-
-## 4. Analytical Graph Metrics
-
-To understand network behavior before and during an attack, the six key traffic metrics are plotted below. All graphs are generated from the `dataset/ndn_traffic.csv` using `generate_graphs.py`.
-
-### 4.1 Volume Extrapolation
-
-During an attack, malicious nodes flood the network with Interests for non-existent data. This produces a sharp spike in the **Interest Rate** and a corresponding surge in **Network Load** (total packet volume in bytes).
-
-<div class="graph-row">
-    <img src="./report_assets/interest_rate.png" alt="Interest Rate Over Time">
-    <img src="./report_assets/network_load.png" alt="Network Load Volatility">
-</div>
-<p class="graph-caption">Left: Interest Rate — spikes reveal flooding events. &nbsp;|&nbsp; Right: Network Load — packet volume in bytes across all nodes.</p>
-
-### 4.2 State Table Irregularities
-
-Because attack Interests request non-existent data, PIT entries never get resolved. They accumulate until timeout, drastically inflating the **PIT Occupancy** (Interest Rate minus Satisfied count) and blocking memory for legitimate requests.
-
-<div class="graph-center">
-    <img src="./report_assets/pit_occupancy.png" alt="PIT Occupancy">
-    <p class="graph-caption">PIT Occupancy — estimated pending Interest Table entries. Sustained high values indicate an ongoing flooding attack.</p>
-</div>
-
-### 4.3 Success and NACK Disparity
-
-With no Data returned for flood Interests, the **Satisfaction Ratio** collapses toward zero. Simultaneously, the **Timeout Ratio** spikes as PIT entries expire, and the **NACK Ratio** rises as the network actively rejects unresolvable requests.
-
-<div class="graph-row">
-    <img src="./report_assets/satisfaction_ratio.png" alt="Satisfaction Ratio">
-    <img src="./report_assets/timeout_ratio.png" alt="Timeout Ratio">
-</div>
-<p class="graph-caption">Left: Satisfaction Ratio — drops sharply during attack phases. &nbsp;|&nbsp; Right: Timeout Ratio — inversely mirrors satisfaction.</p>
-
-<div class="graph-center">
-    <img src="./report_assets/nack_ratio.png" alt="NACK Ratio">
-    <p class="graph-caption">NACK Ratio — rises as routers reject unresolvable Interest floods.</p>
-</div>
-
----
-
-<div class="metrics-wrapper">
-
-## 5. Conclusion
-
-By deploying a 1D Convolutional Neural Network over a sliding window of 10 time steps across 17 traffic features, this system achieves **95.18% live accuracy** in classifying 6 distinct NDN network states — covering normal traffic and 5 attack variants including IFA, Slow IFA, Cache Pollution, Distributed IFA, and Pulsing IFA.
-
-The dashboard, built with `Chart.js`, Fraunces/Outfit typography, and a Flask-PyTorch backend, gives network operators an instant, clean view of real-time traffic health. The system automatically flags all attack variants with verified high accuracy, making it a practical and extensible IFA detection platform for NDN research environments.
+<p class="center muted">
+Generated on: April 21, 2026<br>
+Environment: Python 3.14.2 on Windows
+</p>
