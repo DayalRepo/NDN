@@ -1,3 +1,75 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+   --bg: #fbfbf9;
+   --paper: #ffffff;
+   --text: #1f2937;
+   --muted: #4b5563;
+   --line: #d1d5db;
+   --head: #111827;
+}
+
+body {
+   font-family: 'Outfit', 'Segoe UI', sans-serif;
+   color: var(--text);
+   background: var(--bg);
+   max-width: 980px;
+   margin: 0 auto;
+   padding: 28px 30px 40px;
+   line-height: 1.62;
+}
+
+h1, h2, h3, h4 {
+   font-family: 'Fraunces', Georgia, serif;
+   color: var(--head);
+   line-height: 1.25;
+}
+
+h1 {
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+h2 {
+   margin-top: 28px;
+   border-bottom: 1px solid var(--line);
+   padding-bottom: 7px;
+}
+
+p, li {
+   text-align: left;
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 12px 0 18px;
+}
+
+th, td {
+   border: 1px solid var(--line);
+   padding: 8px 10px;
+   text-align: left;
+   vertical-align: top;
+}
+
+th {
+   background: #f3f4f6;
+}
+
+code, pre {
+   font-family: 'Consolas', 'Courier New', monospace;
+}
+
+pre {
+   background: #f8fafc;
+   border: 1px solid var(--line);
+   border-radius: 8px;
+   padding: 12px;
+}
+</style>
+
 # Run Guide: Multi-Model NDN Attack Detection
 
 This guide shows exactly how to run training and view results:
